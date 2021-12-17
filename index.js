@@ -10,10 +10,11 @@ const SECRET = 'Secret SoftUni';
 const port = process.env.PORT || 4000;
 
 start();
+const dbConnection = 'mongodb+srv://dbUser:dbUser123456@blog.ddec9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
 async function start() {
     await new Promise((resolve, reject) => {
-        mongoose.connect('mongodb://localhost:27017/blog',{
+        mongoose.connect(dbConnection,{
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
