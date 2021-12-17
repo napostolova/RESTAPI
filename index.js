@@ -18,13 +18,18 @@ async function start() {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
+         try {
 
-        const db = mongoose.connection;
-        db.once('open', () => {
-            console.log('Database connected');
-            resolve();
-        });
-        db.on('error', (err) => reject(err));
+             const db = mongoose.connection;
+             db.once('open', () => {
+                 console.log('Database connected');
+                 resolve();
+                });
+                db.on('error', (err) => reject(err));
+            } catch(error) {
+                console.log(error);
+            }
+        
     });
 
     const app = express();
