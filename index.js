@@ -5,12 +5,12 @@ const postController = require('./controllers/postController');
 const userController = require('./controllers/userController');
 
 const auth = require('./middlewares/auth');
+const dbConnection = 'mongodb+srv://dbUser:dbUser123456@blog.ddec9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
 const SECRET = 'Secret SoftUni';
 const port = process.env.PORT || 4000;
 
 start();
-const dbConnection = 'mongodb+srv://dbUser:dbUser123456@blog.ddec9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
 async function start() {
     await new Promise((resolve, reject) => {
